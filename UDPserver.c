@@ -32,6 +32,9 @@ int main(int argc, char *argv[])
   recvfrom(sockfd, buffer, 1024, 0, (struct sockaddr *)&si_other, &addr_size);
   printf("[+]Data Received: %s", buffer);
 
+  sendto(sockfd, buffer, 1024, 0, (struct sockaddr*) &si_other, addr_size);
+  printf("[+]Data Send: %s", buffer);
+
 
   return 0;
 
